@@ -1,0 +1,30 @@
+<%- include('partials/header'); -%>
+    <style>
+        /* .post-img { 
+            width: 50%;
+        } */
+    </style>
+    <div class="">
+        <h1 class="title p-3 m-2">Posts</h1>
+        <p class="px-4"> <%= posts %> </p>
+        <form action="/post" method="POST" class="">
+            <div class="input-group g-2 mb-5 px-4">
+                <input name="query" class="form-control p-3" type="search" placeholder="Search for a post here..." required>
+                <input class="btn btn-dark p-3" type="submit" value="Search">
+            </div>
+        </form>
+    </div>
+    <div class="contain m-4">
+        <div class="post d-flex p-4 shadow rounded">
+            <div class="post-img d-inline col-md-4">
+                <img class="p-2 rounded h-100 w-100" src="https://images.pexels.com/photos/1103833/pexels-photo-1103833.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+            </div>
+            <div id="content" class="p-2 px-3 col-md-8">
+                <h1 class="p-1">Title</h1>
+                <span class="mb-2 p-1 h5"> <%=  %> August 5, 2021</span>
+                <p class="p-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat recusandae laudantium fugit numquam optio consectetur cum, dicta reiciendis at! Cum aut quos corporis aliquid? Non eveniet minus autem quos sit?</p>
+                <a class="btn btn-dark p-3 mx-1" href="#">View post</a>
+            </div>
+        </div>
+    </div>
+<%- include('partials/footer'); -%>

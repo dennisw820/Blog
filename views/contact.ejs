@@ -1,0 +1,42 @@
+<%- include('partials/header'); -%>
+<h5 class="bg-success text-light text-center p-4">Your message was sent successfully!</h5>
+    <div class="container">
+        <center class="pb-4">
+            <h1 class="title p-3 m-2">Contact Us</h1>
+            <p class="px-4"> <%= contactContent %> </p>
+        </center>
+        <div class="contact">
+            <form action="/" method="POST" class="">
+                <div class="d-flex justify-content-evenly mb-3 row g-2">
+                    <div class="form-floating w-50">
+                        <input name="fName" class="form-control rounded" type="text" placeholder="First Name" minlength="1" maxlength="100" required>
+                        <label for="fName" class="foating-input">First Name</label>
+                    </div>
+                    <div class="form-floating w-50">
+                        <input name="lName" class="form-control rounded" type="text" placeholder="Last Name" minlength="1" maxlength="100" required>
+                        <label for="lName" class="foating-input">Last Name</label>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-evenly mb-3 row g-2">
+                    <div class="form-floating w-50">
+                        <input name="phoneNumber" class="form-control rounded" type="tel" placeholder="Phone Number" minlength="1" maxlength="100" required>
+                        <label for="phoneNumber" class="foating-input">Phone Number</label>
+                    </div>
+                    <div class="form-floating w-50">
+                        <input name="email" class="form-control rounded" type="email" placeholder="Email" minlength="1" maxlength="100" required>
+                        <label for="email" class="foating-input">Email</label>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input name="subject" class="form-control rounded" type="text" placeholder="Subject" minlength="1" maxlength="100" required>
+                    <label for="subject" class="foating-input">Subject</label>
+                </div>
+                <div class="form-floating mb-4">
+                    <textarea name="message" class="form-control rounded" type="text" style="height: 250px;" placeholder="Start writing your message here.." minlength="1" maxlength="1000" required></textarea>
+                    <label for="message" class="foating-input">Message</label>
+                </div>
+                <button class="btn btn-block btn-dark p-4 w-100">Send Message</button>
+            </form>
+        </div>
+    </div>
+<%- include('partials/footer'); -%>

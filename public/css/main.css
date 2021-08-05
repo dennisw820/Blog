@@ -1,0 +1,18 @@
+body {
+    background-color: red;
+}
+#navbar {
+    
+}
+#logo {
+
+}
+#nav-list {
+    display: inline;
+}
+.nav-items {
+    list-style: none;
+}
+.nav-links {
+    text-decoration: none;
+}

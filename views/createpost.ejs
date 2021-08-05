@@ -1,0 +1,21 @@
+<%- include('partials/header'); -%>
+    <div class="">
+        <h1 class="title p-3 m-2">New Post</h1>
+        <p class="px-4"> <%= postContent %> </p>
+    </div>
+    <form class="p-3" action="/post" method="POST">
+        <div class="form-floating mb-3">
+            <input name="imgUpload" class="form-control" type="file" placeholder="Upload Photo" required>
+            <label for="imgUpload" class="floating-label p-2">Upload Photo</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input name="title" class="form-control" type="text" placeholder="Title" required>
+            <label for="title" class="floating-label">Title</label>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea name="content" class="form-control" type="text" placeholder="Content..." style="height: 250px;" required></textarea>
+            <label for="content" class="floating-label">Content</label>
+        </div>
+        <button class="btn btn-dark p-3 mb-3 w-100">Post</button>
+    </form>
+<%- include('partials/footer'); -%>
