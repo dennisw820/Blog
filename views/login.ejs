@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Resources -->
+    <!-- <link rel="stylesheet" type="text/css" href="../public/css/main.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image" href="https://cdn.iconscout.com/icon/premium/png-64-thumb/blog-2584637-2170192.png">
+
+    <title>Blog | User Registration</title>
+</head>
+<body class="overflow-hidden">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #ffffff;
+        }
+        #logo {
+            font-size: 25px;
+        }
+        .nav-link {
+            font-family: 'Poppins', 'Sans-serif';
+            color: #ffffff;
+        }
+        .container {
+            height: 71vh;
+            width: 100vw;
+        }
+        textarea {
+            resize: none;
+        }
+        .footer {
+            height: 40vh;
+            width: 100vw;
+        }
+        .footer-title {
+            
+        }
+        
+    </style>
+
+   <%- include('partials/noaccessheader.ejs'); -%>
+
+    <div class="container m-3">
+        <div class="row">
+            <div class="mt-5 col-sm-9 text-center p-5 shadow p-3 mb-5 bg-body rounded-3 position-absolute top-50 start-50 translate-middle">
+                <!-- <div id="login" class=""> -->
+                    <h1 class="text-center">Daily Journal</h1>
+                    <img class="text-center mb-5 h-75 w-75" src="https://cdni.iconscout.com/illustration/premium/thumb/man-doing-blog-and-post-2681413-2239862.png" alt="Daily Journal Logo">
+                    <form class="form-signin" action="/login" method="POST" autocomplete="on" autocapitalize="on">
+                        
+                        <div class="form-floating w-100 mb-3">
+                            <input class="form-control" name="userName" type="text" placeholder="Username or Email..." title="Please enter a valid Username or Email." required>
+                            <label for="userName" class="form-label float-left">Username or Email</label>
+                        </div>
+
+                        <div class="form-floating w-100">
+                            <input class="form-control" name="password" type="password" placeholder="Password..." title="Please enter a valid password." required>
+                            <label for="password" class="form-label float-left">Password</label>
+                        </div>
+                        
+                        <div id="area" class="form-check mt-3 d-inline">
+                            <div class="float-left">
+                                <input id="checkbox" class="form-check-input text-dark mx-1" type="checkbox">  
+                                <label class="form-check-label text-left px-2">Remember Me</label>
+                            </div>
+                            <div class="float-right">
+                                <a class="text-dark mx-5" href="/forgot-passwd">Forgot Password?</a>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="">
+                            <button id="signin" class="btn w-100 btn-dark p-3 mb-3" type="submit" value="Signin">Signin</button>
+                            <a id="signup-btn" class="btn w-100 btn-outline-dark p-3" href="/signup">Sign Up</a>    
+                        </div>                        
+                        
+                    </form>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/footer.ejs') -%> 
+</body>
+</html>

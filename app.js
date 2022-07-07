@@ -93,26 +93,23 @@ let posts = [];
 // Create Post
 app.get('/createpost', (req, res) => {
     res.render('createpost', {postContent:postContent});
-});
+}); 
 app.post('/post', (req, res) => {
     let newPost = {
         imgUpload: req.body.imgUpload,
         title: req.body.title,
         content: req.body.content
     }
-
-    for (let i = 0; i < posts.length; i++) {
-
-    }
-
+    console.log(newPost);
+    posts.push(newPost);
     res.redirect('/post');
 });
 
-// Post
+// Post (Search)
 app.get('/post', (req, res) => {
     res.render('posts', {posts:posts});
 });
-app.post('/post', (req, res) => {
+app.post('/search', (req, res) => {
     // Some function to receive input from search and return search results
     let query = req.body.query;
 });
@@ -124,10 +121,15 @@ app.get('/login', (req, res) => {
 app.post('/login', (req, res) => {
     // Sanitize input
     let userCredentials = {
-        // userName: req.body;
-        // password: req.body;
+        userName: req.body.userName,
+        password: req.body.password
     }
+
+    console.log(userCredentials);
     // Authenticate USer Credentials
+    if(userName === req.body.userName && password === req.body.password) {
+        res.redirect('/post');
+    }
 });
 
 // Signup
@@ -143,6 +145,9 @@ app.post('/signup', (req, res) => {
         password: req.body.password,
         confirmPassword: req.body.confirmPassword
     }
+    console.log(newUser);
+
+    res.redirect('/login');
 });
 
 app.listen(3000, () => {
